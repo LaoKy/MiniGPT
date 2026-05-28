@@ -1,0 +1,15 @@
+{
+  "vocab_size": 1811,
+  "embed_dim": 352,
+  "ffn_dim": 1408,
+  "n_layers": 6,
+  "n_heads": 4,
+  "n_kv_heads": 2,
+  "ctx_len": 96,
+  "dropout": 0.1,
+  "lr": 0.0001,
+  "epochs": 20000,
+  "batch_size": 32,
+  "patience": 800,
+  "min_epoch": 1000
+}

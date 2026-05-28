@@ -1,0 +1,7 @@
+- Model này tạm thời bỏ phase đọc dữ liệu thô để hiểu mối quan hệ từ vì mô hình AI này chắc chắn tầm 10M params nên không cần thiết cái đó, và đương nhiên kiểu gì cũng khá là overfit.
+- Cách bố cục dataset có lẽ vẫn không ổn khi để Q | A vì nếu trong Q hay trong A lại có kí tự | thì cắt lại càng lỗi, khuyến khính mọi người sửa lại hay dùng dạng json, tui làm vậy để cho dễ sử dụng là chính.
+- Cách chạy (đối với ai muốn train lại model mới): Chạy tokenizer.py trước để tạo tệp tokenizer.json, rồi mới bắt đầu chạy train.py, sau khi train xong chạy export_tokenizer.py -> export.py -> convert_weights.py để mà chuyển đổi các trọng số trong model.pt sang dạng lua script để MW có thể đọc, script sẽ được xuất ra trong thư mục scripts.
+- Các tệp lua trong scripts (ngoài tệp mg_main và mg_tick) và các tệp lua trong output có thể xóa nó đi nhé, đó là model tui train trước đó.
+- Nếu muốn chạy model cũ của tui có thể vào thư mục scripts, copy các tệp lua đó và dán vào MW, dán và đặt tên script trong MW theo thứ tự: mg_main, mg_tick, mg_tok, mg_index, mg_w0, mg_w1,... nhé.
+- Nên lên Kaggle hay Google Colab để train nếu máy tính yếu (máy phải cỡ hơn RTX 2060 thì train ở trên máy tính thường cũng được không thì mất tới mấy tiếng).
+- Có gì cần liên hệ hãy liên hệ: https://www.facebook.com/profile.php?id=100076003056977
